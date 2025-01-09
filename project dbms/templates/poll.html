@@ -1,0 +1,21 @@
+<!-- templates/poll.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Options</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Poll Options</h1>
+    <ul>
+        {% for option in options %}
+            <li>{{ option[2] }}</li>
+        {% else %}
+            <li>No options available for this poll.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('section', category_id=poll_id) }}">Back to Polls</a>
+</body>
+</html>

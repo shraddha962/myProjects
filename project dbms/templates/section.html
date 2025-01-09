@@ -1,0 +1,21 @@
+<!-- templates/section.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Polls in Category</h1>
+    <ul>
+        {% for poll in polls %}
+            <li><a href="{{ url_for('poll', poll_id=poll[0]) }}">{{ poll[2] }}</a></li>
+        {% else %}
+            <li>No polls available in this category.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to categories</a>
+</body>
+</html>
